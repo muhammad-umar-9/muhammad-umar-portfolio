@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { HiHeart, HiArrowUp } from 'react-icons/hi'
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { personalInfo } from '../data/personal'
 
 const Footer = ({ pageViews }) => {
@@ -9,9 +9,7 @@ const Footer = ({ pageViews }) => {
   
   const socialLinks = [
     { icon: FaGithub, href: personalInfo.social.github, label: 'GitHub' },
-    { icon: FaLinkedin, href: personalInfo.social.linkedin, label: 'LinkedIn' },
-    { icon: FaTwitter, href: personalInfo.social.twitter, label: 'Twitter' },
-    { icon: FaInstagram, href: personalInfo.social.instagram, label: 'Instagram' }
+    { icon: FaLinkedin, href: personalInfo.social.linkedin, label: 'LinkedIn' }
   ]
 
   const quickLinks = [
@@ -41,8 +39,8 @@ const Footer = ({ pageViews }) => {
             </div>
             
             <p className="text-gray-300 leading-relaxed max-w-md">
-              Data Analyst and AI student passionate about turning data into insights and building 
-              innovative solutions. Always excited to collaborate on interesting projects.
+              AI undergrad and software engineer building production systems that real people use.
+              Always open to collaborating on impactful projects.
             </p>
             
             <div className="flex items-center gap-4">

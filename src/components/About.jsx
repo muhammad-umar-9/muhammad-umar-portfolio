@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { HiAcademicCap, HiTrendingUp, HiLightBulb, HiHeart } from 'react-icons/hi'
-import { personalInfo, interests, funFacts } from '../data/personal'
+import { personalInfo } from '../data/personal'
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -90,11 +90,11 @@ const About = () => {
                     />
                   </div>
                   
-                  {/* Floating Achievement Cards */}
+                  {/* Floating Badge - Deployed Systems */}
                   <div className="absolute -top-6 -right-6 bg-white dark:bg-gray-800 rounded-lg p-3 shadow-lg">
                     <div className="text-center">
-                      <div className="text-2xl font-bold gradient-text">3.0</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">Current CGPA</div>
+                      <div className="text-2xl font-bold gradient-text">99%+</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">ML Accuracy</div>
                     </div>
                   </div>
                   
@@ -194,64 +194,6 @@ const About = () => {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
-
-          {/* Interests */}
-          <motion.div variants={itemVariants} className="space-y-8">
-            <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-gray-200">
-              Interests & Passions
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {interests.map((interest, index) => (
-                <motion.div
-                  key={interest.name}
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                  className="glass-card p-6 space-y-3"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">{interest.icon}</span>
-                    <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      {interest.name}
-                    </h4>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    {interest.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Fun Facts */}
-          <motion.div variants={itemVariants} className="space-y-8">
-            <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-gray-200">
-              Fun Facts
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {funFacts.map((fact, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                  className="glass-card p-4 text-center"
-                >
-                  <p className="text-gray-700 dark:text-gray-300 font-medium">
-                    {fact}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Personal Quote */}
-          <motion.div variants={itemVariants} className="text-center">
-            <blockquote className="text-xl italic text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              "{personalInfo.bio.personal}"
-            </blockquote>
-            <cite className="text-primary-600 dark:text-primary-400 font-medium mt-4 block">
-              - {personalInfo.name}
-            </cite>
           </motion.div>
         </motion.div>
       </div>

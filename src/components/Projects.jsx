@@ -3,19 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { HiExternalLink, HiCode, HiCalendar, HiTag, HiX, HiLockClosed } from 'react-icons/hi'
 import { FaGithub } from 'react-icons/fa'
-import { projects, projectCategories, projectStats } from '../data/projects'
+import { projects } from '../data/projects'
 
 const Projects = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All')
   const [selectedProject, setSelectedProject] = useState(null)
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   })
-
-  const filteredProjects = selectedCategory === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory)
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -58,12 +53,6 @@ const Projects = () => {
         }`}>
           {project.status}
         </div>
-        
-        {project.featured && (
-          <div className="absolute top-4 left-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-3 py-1 rounded-full text-xs font-medium">
-            Featured
-          </div>
-        )}
       </div>
       
       <div className="space-y-4">
@@ -76,19 +65,8 @@ const Projects = () => {
           </p>
         </div>
         
-        <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-          <div className="flex items-center gap-1">
-            <HiCalendar size={16} />
-            {project.date}
-          </div>
-          <div className="flex items-center gap-1">
-            <HiTag size={16} />
-            {project.category}
-          </div>
-        </div>
-        
         <div className="flex flex-wrap gap-2">
-          {project.technologies.slice(0, 3).map((tech) => (
+          {project.technologies.slice(0, 4).map((tech) => (
             <span
               key={tech}
               className="skill-chip text-xs"
@@ -96,9 +74,9 @@ const Projects = () => {
               {tech}
             </span>
           ))}
-          {project.technologies.length > 3 && (
+          {project.technologies.length > 4 && (
             <span className="text-xs text-gray-500 dark:text-gray-400">
-              +{project.technologies.length - 3} more
+              +{project.technologies.length - 4} more
             </span>
           )}
         </div>
@@ -310,63 +288,18 @@ const Projects = () => {
             </p>
           </motion.div>
 
-          {/* Project Stats */}
-          <motion.div variants={itemVariants} className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { label: 'Total Projects', value: projectStats.totalProjects, icon: '🚀' },
-              { label: 'Completed', value: projectStats.completedProjects, icon: '✅' },
-              { label: 'Featured', value: projectStats.featuredProjects, icon: '⭐' },
-              { label: 'Technologies', value: projectStats.technologies, icon: '🛠️' }
-            ].map((stat, index) => (
-              <div key={stat.label} className="glass-card p-6 text-center">
-                <div className="text-3xl mb-2">{stat.icon}</div>
-                <div className="text-2xl font-bold gradient-text">{stat.value}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Category Filter */}
-          <motion.div variants={itemVariants} className="space-y-8">
-            <div className="flex flex-wrap justify-center gap-4">
-              {projectCategories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                    selectedCategory === category
-                      ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                      : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                  }`}
-                >
-                  {category}
-                </button>
+          {/* Projects Grid - Direct, no filter needed */}
+          <motion.div variants={itemVariants}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {projects.map((project, index) => (
+                <ProjectCard key={project.id} project={project} index={index} />
               ))}
-            </div>
-
-            {/* Projects Grid */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selectedCategory}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-                className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-              >
-                {filteredProjects.map((project, index) => (
-                  <ProjectCard key={project.id} project={project} index={index} />
-                ))}
-              </motion.div>
-            </AnimatePresence>
-
-            {filteredProjects.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-gray-500 dark:text-gray-400">
-                  No projects found in this category.
-                </p>
-              </div>
-            )}
+            </motion.div>
           </motion.div>
 
           {/* Call to Action */}
@@ -376,8 +309,7 @@ const Projects = () => {
                 Want to See More?
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                These are just a few highlights from my portfolio. I'm always working on new projects
-                and exploring cutting-edge technologies.
+                Check out my GitHub for more projects, experiments, and open-source contributions.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a
@@ -387,7 +319,7 @@ const Projects = () => {
                   className="btn-primary flex items-center gap-2"
                 >
                   <FaGithub size={20} />
-                  View All Projects
+                  View GitHub Profile
                 </a>
                 <button
                   onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}

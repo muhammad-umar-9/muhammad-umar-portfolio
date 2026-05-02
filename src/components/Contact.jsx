@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { HiMail, HiPhone, HiLocationMarker, HiPaperAirplane } from 'react-icons/hi'
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import emailjs from 'emailjs-com'
 import { personalInfo } from '../data/personal'
 import { validateForm, saveContactDraft, clearContactDraft } from '../utils/analytics'
@@ -161,9 +161,7 @@ const Contact = () => {
 
   const socialLinks = [
     { icon: FaGithub, href: personalInfo.social.github, label: 'GitHub', color: 'hover:text-gray-700' },
-    { icon: FaLinkedin, href: personalInfo.social.linkedin, label: 'LinkedIn', color: 'hover:text-blue-600' },
-    { icon: FaTwitter, href: personalInfo.social.twitter, label: 'Twitter', color: 'hover:text-blue-400' },
-    { icon: FaInstagram, href: personalInfo.social.instagram, label: 'Instagram', color: 'hover:text-pink-600' }
+    { icon: FaLinkedin, href: personalInfo.social.linkedin, label: 'LinkedIn', color: 'hover:text-blue-600' }
   ]
 
   return (
@@ -182,7 +180,7 @@ const Contact = () => {
               Get In Touch
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              I'm always open to discussing new opportunities, collaborations, or just having a friendly chat about technology and data science.
+              Have a project in mind or want to collaborate? I'm always open to building something impactful together.
             </p>
           </motion.div>
 
@@ -398,8 +396,8 @@ const Contact = () => {
                 Ready to Work Together?
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                I'm always looking for exciting opportunities to collaborate on data science projects, 
-                web development, or AI initiatives. Let's create something amazing together!
+                I'm always looking for exciting opportunities to build impactful software, 
+                collaborate on challenging projects, or work on AI initiatives. Let's ship something together!
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a

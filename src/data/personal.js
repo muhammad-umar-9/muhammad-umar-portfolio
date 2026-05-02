@@ -39,10 +39,7 @@ export const personalInfo = {
   social: {
     github: "https://github.com/muhammad-umar-9",
     linkedin: "https://www.linkedin.com/in/muhammad-umar-k",
-    email: "mailto:muhammadumark901@gmail.com",
-    twitter: "#", // Add your Twitter URL here if you have one
-    instagram: "#", // Add your Instagram URL here if you have one
-    website: "#" // Add your website URL here if you have one
+    email: "mailto:muhammadumark901@gmail.com"
   },
   
   // Resume
@@ -70,15 +67,6 @@ export const interests = [
   { name: "Teaching", icon: "👨‍🏫", description: "Sharing knowledge with others" }
 ]
 
-// Fun Facts
-export const funFacts = [
-  "🏆 Completed Google Advanced Data Analytics Certificate",
-  "💻 Built 3+ production-grade applications",
-  "📚 Self-taught in multiple programming languages",
-  "🌟 Active Microsoft Student Partner",
-  "🚀 Passionate about AI and web development",
-  "🔧 Experienced in both frontend and backend technologies"
-]
 
 // Current Status
 export const currentStatus = {

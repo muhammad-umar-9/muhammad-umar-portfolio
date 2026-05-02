@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Chart as ChartJS, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend } from 'chart.js'
 import { Radar } from 'react-chartjs-2'
-import { skills, skillCategories, softSkills, skillStats } from '../data/skills'
+import { skills, skillCategories, skillStats } from '../data/skills'
 
 // Register Chart.js components
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend)
@@ -129,7 +129,7 @@ const Skills = () => {
               Skills & Expertise
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              A comprehensive overview of my technical skills and proficiency levels
+              Technologies and tools I use to build and ship production software
             </p>
           </motion.div>
 
@@ -163,37 +163,43 @@ const Skills = () => {
               </div>
             </motion.div>
 
-            {/* Soft Skills */}
+            {/* Tech Stack Summary */}
             <motion.div variants={itemVariants} className="glass-card p-8 space-y-6">
               <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-gray-200">
-                Soft Skills
+                Tech Stack
               </h3>
               <div className="space-y-4">
-                {softSkills.map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
-                    variants={skillVariants}
-                    className="space-y-2"
-                  >
-                    <div className="flex justify-between items-center">
-                      <span className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-                        <span className="text-xl">{skill.icon}</span>
-                        {skill.name}
-                      </span>
-                      <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <motion.div
-                        className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full"
-                        initial={{ width: 0 }}
-                        animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                      />
-                    </div>
-                  </motion.div>
-                ))}
+                {skillCategories.map((category, index) => {
+                  const categorySkills = skills[category.key] || []
+                  const avgLevel = categorySkills.length > 0 
+                    ? Math.round(categorySkills.reduce((acc, skill) => acc + skill.level, 0) / categorySkills.length)
+                    : 0
+                  return (
+                    <motion.div
+                      key={category.key}
+                      variants={skillVariants}
+                      className="space-y-2"
+                    >
+                      <div className="flex justify-between items-center">
+                        <span className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+                          <span className="text-xl">{category.icon}</span>
+                          {category.name}
+                        </span>
+                        <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                          {avgLevel}%
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <motion.div
+                          className={`bg-gradient-to-r ${category.color} h-2 rounded-full`}
+                          initial={{ width: 0 }}
+                          animate={inView ? { width: `${avgLevel}%` } : { width: 0 }}
+                          transition={{ duration: 1, delay: index * 0.1 }}
+                        />
+                      </div>
+                    </motion.div>
+                  )
+                })}
               </div>
             </motion.div>
           </div>

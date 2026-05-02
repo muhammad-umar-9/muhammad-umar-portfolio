@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { HiDownload, HiMail, HiLocationMarker } from 'react-icons/hi'
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { personalInfo } from '../data/personal'
 import { scrollToElement } from '../utils/analytics'
 
@@ -51,9 +51,7 @@ const Hero = () => {
 
   const socialLinks = [
     { icon: FaGithub, href: personalInfo.social.github, label: 'GitHub' },
-    { icon: FaLinkedin, href: personalInfo.social.linkedin, label: 'LinkedIn' },
-    { icon: FaTwitter, href: personalInfo.social.twitter, label: 'Twitter' },
-    { icon: FaInstagram, href: personalInfo.social.instagram, label: 'Instagram' }
+    { icon: FaLinkedin, href: personalInfo.social.linkedin, label: 'LinkedIn' }
   ]
 
   return (
@@ -122,7 +120,7 @@ const Hero = () => {
                 <div className="text-sm text-gray-600 dark:text-gray-400">ML Accuracy</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold gradient-text">16+</div>
+                <div className="text-2xl font-bold gradient-text">5</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Certifications</div>
               </div>
               <div className="text-center">
