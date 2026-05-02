@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { HiExternalLink, HiCode, HiCalendar, HiTag, HiX } from 'react-icons/hi'
+import { HiExternalLink, HiCode, HiCalendar, HiTag, HiX, HiLockClosed } from 'react-icons/hi'
 import { FaGithub } from 'react-icons/fa'
 import { projects, projectCategories, projectStats } from '../data/projects'
 
@@ -105,15 +105,22 @@ const Projects = () => {
         
         <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
           <div className="flex items-center gap-3">
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-            >
-              <FaGithub size={16} />
-              Code
-            </a>
+            {project.isPrivate ? (
+              <span className="flex items-center gap-2 text-gray-500 dark:text-gray-500 text-sm">
+                <HiLockClosed size={16} />
+                Private Repo
+              </span>
+            ) : project.githubUrl !== '#' && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                <FaGithub size={16} />
+                Code
+              </a>
+            )}
             {project.liveUrl !== '#' && (
               <a
                 href={project.liveUrl}
@@ -185,6 +192,22 @@ const Projects = () => {
                   </p>
                 </div>
                 
+                {project.highlights && project.highlights.length > 0 && (
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                      Key Highlights
+                    </h3>
+                    <ul className="space-y-2">
+                      {project.highlights.map((highlight, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+                          <span className="text-primary-500 mt-1">•</span>
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
                     Technologies Used
@@ -233,15 +256,22 @@ const Projects = () => {
             </div>
             
             <div className="flex items-center gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary flex items-center gap-2"
-              >
-                <FaGithub size={20} />
-                View Code
-              </a>
+              {project.isPrivate ? (
+                <span className="flex items-center gap-2 text-gray-500 dark:text-gray-400 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm">
+                  <HiLockClosed size={18} />
+                  Private Repository
+                </span>
+              ) : project.githubUrl !== '#' && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary flex items-center gap-2"
+                >
+                  <FaGithub size={20} />
+                  View Code
+                </a>
+              )}
               {project.liveUrl !== '#' && (
                 <a
                   href={project.liveUrl}
@@ -276,7 +306,7 @@ const Projects = () => {
               Featured Projects
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              A showcase of my best work spanning web development, data analysis, and machine learning
+              Real projects, real users, real deployments — not just demos.
             </p>
           </motion.div>
 

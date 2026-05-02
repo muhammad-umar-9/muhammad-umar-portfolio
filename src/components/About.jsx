@@ -32,8 +32,8 @@ const About = () => {
   const achievements = [
     {
       icon: HiTrendingUp,
-      title: "Academic Growth",
-      description: "Improved from 2.6 SGPA to 3.0 CGPA through dedication and hard work",
+      title: "Production Deployed",
+      description: "Facial recognition system running on GIKI's servers, used daily by faculty",
       color: "from-green-400 to-emerald-500"
     },
     {
@@ -44,14 +44,14 @@ const About = () => {
     },
     {
       icon: HiLightBulb,
-      title: "Innovation",
-      description: "Built 6+ projects spanning web development, data analysis, and AI",
+      title: "Full Stack Builder",
+      description: "Built production-grade apps with FastAPI, Flask, React Native & PostgreSQL",
       color: "from-purple-400 to-pink-500"
     },
     {
       icon: HiHeart,
-      title: "Passion",
-      description: "Dedicated to leveraging technology for positive impact",
+      title: "Real Impact",
+      description: "Campus food delivery platform serving an entire university community",
       color: "from-red-400 to-orange-500"
     }
   ]
@@ -72,7 +72,7 @@ const About = () => {
               About Me
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Get to know the person behind the code and the journey that shaped my passion for data and AI
+              {personalInfo.bio.subtitle}
             </p>
           </motion.div>
 

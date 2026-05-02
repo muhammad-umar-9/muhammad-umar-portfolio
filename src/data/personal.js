@@ -1,8 +1,8 @@
 // Personal Information
 export const personalInfo = {
   name: "Muhammad Umar",
-  title: "Data Analyst | AI Student | Full Stack Developer",
-  subtitle: "Turning Data into Insights, Building the Future with AI & Web Technologies",
+  title: "AI Undergrad | Full Stack Developer | Software Engineer",
+  subtitle: "Building real software, shipping real products, and constantly learning.",
   email: "muhammadumark901@gmail.com",
   phone: "+92 348 0933979",
   location: "Topi, Pakistan",
@@ -14,28 +14,23 @@ export const personalInfo = {
   // Academic Information
   academic: {
     currentCGPA: "3.0",
-    previousSGPA: "2.6",
-    improvement: "Improved from 2.6 SGPA to 3.0 CGPA",
-    achievements: [
-      "Significant academic improvement from 2.6 SGPA to 3.0 CGPA",
-      "Google Advanced Data Analytics Certificate",
-      "Active member of Microsoft Student Partner Program",
-      "Completed multiple programming specializations"
-    ]
+    improvement: "B.S. Artificial Intelligence · 2023 – 2027"
   },
   
   // Professional Summary
-  summary: "Passionate Data Analyst, AI student, and Full Stack Developer at GIKI with a remarkable academic journey from 2.6 SGPA to 3.0 CGPA. Skilled in Python, machine learning, data visualization, and modern web technologies. Certified in Google Advanced Data Analytics with hands-on experience in building end-to-end applications. Combines technical expertise with analytical thinking to solve complex problems and create innovative solutions.",
+  summary: "AI undergrad at GIKI building things that actually ship. Deployed a facial recognition system used daily by faculty, and built a real-time food delivery platform for an entire campus. I write production-grade Python and JavaScript, design REST APIs, and turn ideas into working software — not just demos.",
   
   // Bio for About Section
   bio: {
-    introduction: "Hello! I'm Muhammad Umar, a dedicated Data Analyst and third-year Artificial Intelligence student at GIKI University. My journey in tech began with curiosity about how data can tell stories and drive meaningful decisions.",
+    subtitle: "The person behind the code — building real software, shipping real products, and constantly learning.",
     
-    journey: "My academic path hasn't been traditional – I started with a 2.6 SGPA but through determination, continuous learning, and passion for data science, I've improved to a 3.0 CGPA. This journey taught me that growth mindset and persistence are more valuable than perfection.",
+    introduction: "I'm Muhammad Umar, a 3rd-year Artificial Intelligence student at GIKI and a software engineer who builds things that go live. My journey didn't start in a classroom — it started with a curiosity about why systems break, how apps scale, and what it actually takes to ship something real.",
     
-    expertise: "I specialize in Python programming, machine learning, data visualization, and full stack web development. My experience includes building complete web applications from frontend to backend, creating interactive dashboards, and developing predictive models. I'm particularly interested in applying AI to solve real-world problems and building scalable web solutions.",
+    journey: "That curiosity turned into a facial recognition attendance system now running on GIKI's servers and used by faculty every day. It turned into a campus food delivery platform built from scratch. I don't just study software engineering — I practice it.",
     
-    goals: "I'm passionate about leveraging data science and artificial intelligence to make a positive impact. Whether it's predicting market trends, optimizing business processes, or developing intelligent systems, I'm always excited to take on new challenges.",
+    expertise: "I build full-stack applications from the ground up — REST APIs with FastAPI and Flask, mobile apps with React Native, and databases with PostgreSQL. I'm comfortable across the entire stack, from designing schemas to deploying on production servers.",
+    
+    goals: "My AI background means I can go further when a project needs it — computer vision, predictive models, real-time pipelines — but my foundation is solid software engineering. Clean code, real deployments, and solutions that actually work for real users.",
     
     personal: "When I'm not coding or analyzing data, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with the tech community. I believe in continuous learning and staying updated with the latest trends in AI and data science."
   },
@@ -77,9 +72,8 @@ export const interests = [
 
 // Fun Facts
 export const funFacts = [
-  "🎯 Improved CGPA from 2.6 to 3.0 in one year",
   "🏆 Completed Google Advanced Data Analytics Certificate",
-  "💻 Built 6+ full stack projects in different domains",
+  "💻 Built 3+ production-grade applications",
   "📚 Self-taught in multiple programming languages",
   "🌟 Active Microsoft Student Partner",
   "🚀 Passionate about AI and web development",

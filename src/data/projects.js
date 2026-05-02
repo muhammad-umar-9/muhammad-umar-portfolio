@@ -2,87 +2,66 @@
 export const projects = [
   {
     id: 1,
-    title: "GIKI Hub – Market Automation Web App",
-    description: "A comprehensive web application for market automation with user management, product catalog, and automated workflows. Built with modern web technologies and responsive design.",
-    longDescription: "GIKI Hub is a full-stack web application designed to automate market operations for the GIKI university community. Features include user authentication, product management, order processing, and real-time notifications.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "jQuery", "Node.js", "MongoDB", "Express.js"],
+    title: "Smart Attendance System",
+    description: "Deployed on GIKI's internal server and used by faculty; instructors mark attendance in real time via the web app. YOLOv9 + ArcFace facial recognition pipeline achieving 99%+ accuracy.",
+    longDescription: "A production facial recognition attendance system deployed on GIKI's internal server and used daily by faculty. Features a YOLOv9 + ArcFace facial recognition pipeline achieving 99%+ accuracy across varying lighting and angles. Built with a FastAPI backend with JWT auth, OTP verification, and role-based access control. PostgreSQL database for storing student records, attendance logs, course enrollments, and user credentials. Includes automated image augmentation (5×), centroid-based classification, and per-course model training.",
+    technologies: ["Python", "FastAPI", "React Native", "PostgreSQL", "Docker", "YOLOv9", "ArcFace"],
     category: "Full Stack",
-    githubUrl: "https://github.com/muhammad-umar-9/giki-hub",
-    liveUrl: "https://giki-hub.vercel.app",
-    image: "/project_images/giki-hub.svg",
+    githubUrl: "#",
+    liveUrl: "#",
+    image: "/project_images/smart_attendance_project_image.png",
     featured: true,
     status: "Completed",
-    date: "2024"
+    date: "2025",
+    isPrivate: true,
+    highlights: [
+      "Deployed on GIKI's internal server and used by faculty daily",
+      "YOLOv9 + ArcFace pipeline with 99%+ accuracy",
+      "FastAPI backend with JWT auth, OTP verification, and RBAC",
+      "PostgreSQL for student records, attendance logs, and enrollments",
+      "Automated image augmentation (5×) and per-course model training"
+    ]
   },
   {
     id: 2,
-    title: "Superstore Excel Dashboard",
-    description: "Interactive Excel dashboard analyzing superstore sales data with advanced pivot tables, dynamic slicers, and sparklines for comprehensive business intelligence.",
-    longDescription: "A comprehensive Excel dashboard that transforms raw superstore data into actionable business insights. Features interactive pivot tables, dynamic charts, and KPI tracking for sales performance analysis.",
-    technologies: ["Microsoft Excel", "Pivot Tables", "Data Visualization", "Business Intelligence"],
-    category: "Data Analysis",
-    githubUrl: "https://github.com/muhammad-umar-9/superstore-dashboard",
-    liveUrl: "#",
-    image: "/project_images/superstore-dashboard-backup.svg",
+    title: "GIKI Panda – Campus Food Delivery System",
+    description: "Multi-role platform (Student, Vendor, Rider, Admin) with real-time GPS tracking via WebSockets. Anti-spoofing layer with rate limiting, teleport detection, and campus geofencing.",
+    longDescription: "A comprehensive campus food delivery system with multi-role support for Students, Vendors, Riders, and Admins. Features real-time GPS tracking via WebSockets, an anti-spoofing layer with rate limiting, teleport detection, and campus geofencing. Interactive campus map with 20+ building polygons from OpenStreetMap using Leaflet.js.",
+    technologies: ["Flask", "PostgreSQL", "Socket.IO", "Leaflet.js", "WebSockets"],
+    category: "Full Stack",
+    githubUrl: "https://github.com/muhammad-umar-9/GIKIPanda-Food-Delivery-System",
+    liveUrl: "https://giki-panda-food-2f1e85dc6df5.herokuapp.com/",
+    image: "/project_images/giki_panda_project_image.png",
     featured: true,
     status: "Completed",
-    date: "2024"
+    date: "2025",
+    highlights: [
+      "Multi-role platform: Student, Vendor, Rider, Admin",
+      "Real-time GPS tracking via WebSockets",
+      "Anti-spoofing: rate limiting, teleport detection, geofencing",
+      "Interactive campus map with 20+ building polygons via Leaflet.js"
+    ]
   },
   {
     id: 3,
-    title: "Salifort Motors – Google Capstone Project",
-    description: "Employee retention prediction model using machine learning algorithms. Part of Google Advanced Data Analytics Certificate program with comprehensive data analysis and visualization.",
-    longDescription: "A machine learning project focused on predicting employee retention for Salifort Motors. Utilized advanced statistical analysis, feature engineering, and multiple ML algorithms to identify key factors affecting employee satisfaction and turnover.",
-    technologies: ["Python", "Pandas", "Scikit-learn", "Tableau", "Machine Learning", "Data Visualization"],
-    category: "Machine Learning",
-    githubUrl: "https://github.com/muhammad-umar-9/salifort-motors-capstone",
-    liveUrl: "https://public.tableau.com/app/profile/muhammad.umar6880/vizzes",
-    image: "/project_images/salifort-motors.svg",
+    title: "Biomedical Knowledge Graph System",
+    description: "Built a 2.1M+ triple knowledge graph from PubMed using OWL 2 ontology with 23 classes and HermiT reasoning. Python ETL pipeline processing 50K+ records with entity linking.",
+    longDescription: "A large-scale biomedical knowledge graph system built from PubMed data using OWL 2 ontology with 23 classes and HermiT reasoning. Features a Python ETL pipeline processing 50K+ records with entity linking to DBpedia and Wikidata. Includes a Flask + D3.js visualization dashboard with live SPARQL endpoint, deployed on Heroku.",
+    technologies: ["Python", "SPARQL", "GraphDB", "Flask", "D3.js", "OWL 2"],
+    category: "AI / Knowledge Systems",
+    githubUrl: "https://github.com/muhammad-umar-9/Knowlege-Graphs-Project",
+    liveUrl: "https://krr-685beba13d3f.herokuapp.com/",
+    image: "/project_images/knowledge_graph_project_image.png",
     featured: true,
     status: "Completed",
-    date: "2024"
-  },
-  {
-    id: 4,
-    title: "TikTok Data Classification",
-    description: "Machine learning model to classify TikTok content using natural language processing and computer vision techniques. Achieved 94% accuracy in content categorization.",
-    longDescription: "Developed a comprehensive content classification system for TikTok videos using advanced machine learning techniques. The project involved text analysis, feature extraction, and model optimization to achieve high accuracy in content categorization.",
-    technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "NLP", "Machine Learning"],
-    category: "Machine Learning",
-    githubUrl: "https://github.com/muhammad-umar-9/tiktok-classification",
-    liveUrl: "#",
-    image: "/project_images/tiktok-classification.svg",
-    featured: false,
-    status: "Completed",
-    date: "2024"
-  },
-  {
-    id: 5,
-    title: "NBA Career Duration Prediction",
-    description: "Predictive model to estimate NBA player career duration based on rookie season performance metrics. Implemented advanced feature engineering and ensemble methods.",
-    longDescription: "A comprehensive machine learning project that predicts NBA player career longevity based on their rookie season statistics. The model considers various performance metrics and uses ensemble methods to provide accurate predictions.",
-    technologies: ["Python", "Machine Learning", "Feature Engineering", "Data Analysis", "Sports Analytics"],
-    category: "Machine Learning",
-    githubUrl: "https://github.com/muhammad-umar-9/nba-career-prediction",
-    liveUrl: "#",
-    image: "/project_images/nba-career.svg",
-    featured: false,
-    status: "Completed",
-    date: "2023"
-  },
-  {
-    id: 6,
-    title: "TCP/IP Packet Simulator",
-    description: "Network protocol simulator implemented in C++ to demonstrate TCP/IP packet transmission, routing algorithms, and network congestion management.",
-    longDescription: "A comprehensive network simulation system that models TCP/IP packet transmission across various network topologies. Includes implementation of routing algorithms, congestion control, and network performance analysis.",
-    technologies: ["C++", "Network Programming", "Algorithms", "Data Structures", "System Programming"],
-    category: "System Programming",
-    githubUrl: "https://github.com/muhammad-umar-9/tcp-ip-simulator",
-    liveUrl: "#",
-    image: "/project_images/tcp-simulator.svg",
-    featured: false,
-    status: "Completed",
-    date: "2023"
+    date: "2025",
+    highlights: [
+      "2.1M+ triple knowledge graph from PubMed",
+      "OWL 2 ontology with 23 classes and HermiT reasoning",
+      "Python ETL pipeline processing 50K+ records",
+      "Entity linking to DBpedia and Wikidata",
+      "Flask + D3.js dashboard with live SPARQL endpoint"
+    ]
   }
 ]
 
@@ -90,9 +69,7 @@ export const projects = [
 export const projectCategories = [
   "All",
   "Full Stack",
-  "Data Analysis",
-  "Machine Learning",
-  "System Programming"
+  "AI / Knowledge Systems"
 ]
 
 // Project Stats

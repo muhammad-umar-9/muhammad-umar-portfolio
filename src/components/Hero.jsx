@@ -11,11 +11,10 @@ const Hero = () => {
   const [textIndex, setTextIndex] = useState(0)
   
   const texts = [
-    "Data Analyst",
     "AI Student",
     "Full Stack Developer",
+    "Software Engineer",
     "Python Developer",
-    "ML Enthusiast",
     "Problem Solver"
   ]
 
@@ -115,12 +114,12 @@ const Hero = () => {
               className="flex flex-wrap gap-8 py-6"
             >
               <div className="text-center">
-                <div className="text-2xl font-bold gradient-text">3.0</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Current CGPA</div>
+                <div className="text-2xl font-bold gradient-text">3+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Production Apps</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold gradient-text">6+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Projects</div>
+                <div className="text-2xl font-bold gradient-text">99%+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">ML Accuracy</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold gradient-text">16+</div>
